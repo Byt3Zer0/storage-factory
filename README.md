@@ -1,28 +1,113 @@
-This is part of the Cyfrin Solidity Blockchain Course.
+# Byt3Zer0 Storage Factory
 
-*[⭐️ Cyfrin Updraft | Remix Storage Factory](https://updraft.cyfrin.io/courses/solidity/storage-factory/factory-introduction)*
+[![Build Status](https://img.shields.io/github/actions/workflow/status/Byt3Zer0/storage-factory/forge.yml?branch=main)](https://github.com/Byt3Zer0/storage-factory/actions)
+[![License](https://img.shields.io/github/license/Byt3Zer0/storage-factory)](LICENSE)
+[![GitHub stars](https://img.shields.io/github/stars/Byt3Zer0/storage-factory)](https://github.com/Byt3Zer0/storage-factory/stargazers)
 
-*[🎥  (3:29:58) | Lesson 3 | Remix Storage Factory](https://www.youtube.com/watch?v=umepbfKp5rI&t=12598s)*
+---
 
-## Getting Started
+<p align="center">
+  <img src="https://raw.githubusercontent.com/Byt3Zer0/storage-factory/main/thumbnails/storage-factory.png" alt="Storage Factory" width="300">
+</p>
 
-1. Go to [Remix](https://remix.ethereum.org/)
-2. Paste the code from `SimpleStorage.sol`, `StorageFactory.sol`, and `AddFiveStorage.sol` into a new file in Remix
-3. Hit `Compile`
-4. Hit `Deploy` for whatever contract you want.
+## 🏗️ Descripción
 
-## Resources talked about in the Video:
-1. Bits and Bytes Video link by Linus Tech tips: https://www.youtube.com/watch?v=Dnd28lQHquU 
+Este proyecto implementa el patrón **Factory** para desplegar múltiples instancias de `SimpleStorage` usando Foundry y Remix.
 
-For a more in depth blog on working with remix, [read here](https://docs.chain.link/docs/deploy-your-first-contract/)
+**Autor:** Byt3Zer0 ([GitHub](https://github.com/Byt3Zer0))
 
-# Thank you!
+**Objetivo:** Crear un ejemplo práctico para mi portafolio de desarrollo blockchain.
 
-If you appreciated this, feel free to follow me or donate!
+## 📋 Índice
 
-ETH/zkSync/Arbitrum/Optimism/etc Address: `cyfrin1.eth`: 0x3846c3A30E62075Fa916216b35EF04B8F53931f6 (Confirm the ENS matches the address!)
+1. [Características](#-características)
+2. [Estructura del proyecto](#-estructura-del-proyecto)
+3. [Instalación](#-instalación)
+4. [Uso](#-uso)
+5. [Tests](#-tests)
+6. [Comandos de Foundry](#-comandos-de-foundry)
+7. [Contribuciones](#-contribuciones)
+8. [Licencia](#-licencia)
 
-[![Patrick Collins Twitter](https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/PatrickAlphaC)
-[![Patrick Collins YouTube](https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://www.youtube.com/channel/UCn-3f8tw_E1jZvhuHatROwA)
-[![Patrick Collins Linkedin](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/patrickalphac/)
-[![Patrick Collins Medium](https://img.shields.io/badge/Medium-000000?style=for-the-badge&logo=medium&logoColor=white)](https://medium.com/@patrick.collins_58673/)
+## ✨ Características
+
+- Despliega instancias de `SimpleStorage` de forma programática.
+- Ejemplos de scripts para Foundry (`forge script`).
+- Tests automatizados con Forge Standard Library.
+- Integración opcional con Remix.
+
+## 🗂️ Estructura del proyecto
+
+```
+├── src/
+│   ├── SimpleStorage.sol
+│   └── StorageFactory.sol
+├── script/
+│   └── DeployStorageFactory.s.sol
+├── test/
+│   └── StorageFactoryTest.t.sol
+├── thumbnails/
+│   └── storage-factory.png
+├── README.md
+└── LICENSE
+```
+
+## 🚀 Instalación
+
+1. Clona tu fork:
+
+   ```bash
+   git clone https://github.com/Byt3Zer0/storage-factory.git
+   cd storage-factory
+   ```
+
+2. Instala Foundry si no lo tienes:
+
+   ```bash
+   curl -L https://foundry.paradigm.xyz | bash
+   source ~/.bashrc
+   foundryup
+   ```
+
+3. Construye el proyecto:
+
+   ```bash
+   forge build
+   ```
+
+## ⚙️ Uso
+
+- **Desplegar en local (Anvil):**
+
+  ```bash
+  anvil &
+  forge script script/DeployStorageFactory.s.sol --broadcast --rpc-url http://127.0.0.1:8545
+  ```
+
+- **Interacción rápida en Remix:**
+
+  1. Abre [Remix](https://remix.ethereum.org/).
+  2. Copia los contratos de `src/`.
+  3. Ejecuta el script de Factory desde la pestaña de Scripts.
+
+## ✅ Tests
+
+Ejecuta todos los tests con:
+
+```bash
+forge test -vv --gas-report
+```
+
+## 🔧 Comandos de Foundry
+
+- `forge build`: compila los contratos.
+- `forge test`: ejecuta los tests.
+- `forge script`: ejecuta scripts de despliegue.
+
+## 🤝 Contribuciones
+
+¡Bienvenidas! Si encuentras errores o quieres mejorar el proyecto, abre un Issue o Pull Request.
+
+## 📜 Licencia
+
+Este proyecto está bajo la licencia MIT. Para más detalles, consulta el archivo [LICENSE](LICENSE).
